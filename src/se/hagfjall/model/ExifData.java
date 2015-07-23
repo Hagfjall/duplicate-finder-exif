@@ -22,7 +22,6 @@ public class ExifData {
 
     private String file;
     private String tags;
-    //May not be needed...
     private Metadata metadata;
 
     public ExifData(Metadata metadata, String file) {

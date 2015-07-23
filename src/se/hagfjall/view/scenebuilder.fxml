@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <BorderPane prefHeight="700.0" prefWidth="886.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="se.hagfjall.view.ViewController">
   <bottom>
     <ImageView fx:id="imageView" fitHeight="314.53125" fitWidth="559.1666666666666" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
@@ -30,6 +26,9 @@
       </content>
     </ScrollPane>
   </left>
+  <right>
+    <TextArea fx:id="fileInfoTextArea" prefWidth="200.0" wrapText="true" />
+  </right>
   <top>
     <MenuBar useSystemMenuBar="true">
       <menus>

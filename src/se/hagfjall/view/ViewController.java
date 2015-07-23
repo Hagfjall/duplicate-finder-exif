@@ -3,10 +3,7 @@ package se.hagfjall.view;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.ListView;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import se.hagfjall.model.DuplicateFinderExif;
@@ -47,6 +44,8 @@ public class ViewController implements Initializable {
     private MenuItem openSelectedFileIM;
     @FXML
     private MenuItem changeToOriginalIM;
+    @FXML
+    private TextArea fileInfoTextArea;
 
     @Override // This method is called by the FXMLLoader when initialization is complete
     public void initialize(URL fxmlFileLocation, ResourceBundle resources) {
@@ -62,6 +61,7 @@ public class ViewController implements Initializable {
                 "fx:id=\"openSelectedFileIM\" was not injected: check your FXML file 'simple.fxml'.";
         assert changeToOriginalIM != null :
                 "fx:id=\"changeToOriginalIM\" was not injected: check your FXML file 'simple.fxml'.";
+        assert fileInfoTextArea != null :  "fx:id=\"fileInfoTextArea\" was not injected: check your FXML file 'simple.fxml'.";
 
         duplicateFinderExif = new DuplicateFinderExif(View.parameters[0], View.parameters[1]);
         duplicateFinderExif.findDuplicates();
@@ -108,12 +108,15 @@ public class ViewController implements Initializable {
         duplicateFileList.setItems(FXCollections.observableList(duplicates));
         duplicateFileListMarked = null;
         originalFileListMarked = absExifData;
+        fileInfoTextArea.setText(absExifData.getFileInfo());
+
     }
 
-    private void duplicateFileListClicked(AbstractExifDataForView abstractExifDataForView) {
+    private void duplicateFileListClicked(AbstractExifDataForView absExifData) {
         changeToOriginalIM.setDisable(false);
-        updateImageView(abstractExifDataForView.getExifData().getCanonicalPath());
-        duplicateFileListMarked = abstractExifDataForView;
+        updateImageView(absExifData.getExifData().getCanonicalPath());
+        duplicateFileListMarked = absExifData;
+        fileInfoTextArea.setText(absExifData.getFileInfo());
     }
 
     private void changeToOriginalClicked() {

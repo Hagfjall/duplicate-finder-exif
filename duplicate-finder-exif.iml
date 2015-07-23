@@ -9,5 +9,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="com.drewnoakes:metadata-extractor:2.8.1" level="project" />
     <orderEntry type="library" name="org.apache.commons:commons-collections4:4.0" level="project" />
+    <orderEntry type="library" name="apache-commons-collections" level="project" />
+    <orderEntry type="library" name="metadata-extractor" level="project" />
   </component>
 </module>

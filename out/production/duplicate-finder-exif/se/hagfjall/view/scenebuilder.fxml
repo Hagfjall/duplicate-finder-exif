@@ -30,6 +30,9 @@
       </content>
     </ScrollPane>
   </left>
+  <right>
+    <TextArea fx:id="fileInfoTextArea" prefWidth="200.0" wrapText="true" />
+  </right>
   <top>
     <MenuBar useSystemMenuBar="true">
       <menus>
