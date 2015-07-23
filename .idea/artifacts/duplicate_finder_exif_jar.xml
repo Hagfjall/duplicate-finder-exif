@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="duplicate-finder-exif:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/duplicate_finder_exif_jar</output-path>
+    <root id="archive" name="duplicate-finder-exif.jar">
+      <element id="module-output" name="duplicate-finder-exif" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../!Externa bibliotek/metadata-extractor/metadata-extractor-2.8.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../!Externa bibliotek/metadata-extractor/xmpcore-5.1.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
