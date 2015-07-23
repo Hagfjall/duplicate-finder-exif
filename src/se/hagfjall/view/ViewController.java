@@ -13,6 +13,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 /**
@@ -91,12 +92,18 @@ public class ViewController implements Initializable {
             return;
 
         }
-        //TODO open this in the OS
+        //TODO open this in the OS, seems to be a problem with JavaFX....
+        //http://stackoverflow.com/questions/23176624/javafx-freeze-on-desktop-openfile-desktop-browseuri
     }
 
 
     private void changeMoveFolder() {
-        System.out.println("change output folder");
+        TextInputDialog dialog = new TextInputDialog(DuplicateFinderExif.outputFolder);
+        dialog.setTitle("Change move-to-folder");
+        dialog.setHeaderText("Destination to put the duplicates");
+        dialog.setContentText("Path");
+        Optional<String> result = dialog.showAndWait();
+        result.ifPresent(path -> duplicateFinderExif.setOutputFolder(path));
     }
 
     private void originalFileListClicked(AbstractExifDataForView absExifData) {
